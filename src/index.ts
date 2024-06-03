@@ -28,7 +28,8 @@ const getLinksForPage = async (url: string) => {
     .on("*[data-article-path]", {
       element(element) {
         const value = element.getAttribute("data-article-path")!;
-        links.push(value);
+        const url = `https://www.hbl.fi${value}`;
+        links.push(url);
       },
     })
     .transform(res);
